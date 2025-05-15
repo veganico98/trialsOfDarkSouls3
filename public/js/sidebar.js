@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
             parent.classList.toggle('active');
         });
     });
+
+    // Toggle sidebar em mobile (opcional)
     const toggleBtn = document.querySelector('.sidebar-toggle');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', function() {

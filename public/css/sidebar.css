@@ -1,0 +1,137 @@
+.nav-side-menu {
+    background-color: #2e2e2e;
+    position: fixed;
+    top: 3em;
+    left: 0;
+    width: 220px;
+    height: calc(100% - 3em);
+    color: #B88A3B;
+    border-right: 2px solid #8d6a2d;
+    z-index: 900;
+    overflow-y: auto;
+    transition: all 0.3s;
+}
+
+.nav-side-menu .brand {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #8d6a2d;
+    border-top: 1px solid #8d6a2d;
+
+}
+
+.nav-side-menu .logo {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s;
+}
+
+.nav-side-menu .logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-side-menu ul, 
+.nav-side-menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 45px;
+}
+
+.nav-side-menu li {
+    position: relative;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.nav-side-menu li a .sidebar-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.nav-side-menu .sub-menu {
+    background-color: #1a1a1a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.nav-side-menu .sub-menu.in {
+    max-height: 500px;
+}
+
+.nav-side-menu .sub-menu li a {
+    padding-left: 40px;
+    color: #8d6a2d;
+}
+
+.nav-side-menu .sub-menu li a:hover {
+    color: #B88A3B;
+}
+
+.nav-side-menu .sub-menu li a i {
+    margin-right: 8px;
+}
+
+.material-symbols-sidebar {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+
+.menu-list li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #A6A6A6;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.menu-list li a:hover {
+    background: #2a2a2a;
+    color: #B88A3B;
+}
+
+.material-symbols-outlined {
+    margin-right: 10px;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #1a1a1a;
+}
+
+.has-submenu.active .submenu {
+    max-height: 500px;
+}
+
+.submenu li a {
+    padding-left: 40px !important;
+}
+
+.arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.has-submenu.active .arrow {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .nav-side-menu {
+        left: -220px;
+    }
+    
+    .nav-side-menu.active {
+        left: 0;
+    }
+}
