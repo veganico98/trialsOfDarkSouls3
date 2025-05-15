@@ -1,33 +1,33 @@
 <div class="content">
 
     <?php if(isset($_GET['status']) && $_GET['status'] == 1){ ?>
-        <h2>Bosses Defeated</h2>      
+        <h2>Sorceries not collected</h2>      
     <?php }else if(isset($_GET['status']) && $_GET['status'] == 0) { ?>
-        <h2>Bosses Alive</h2>
+        <h2>Sorceries collected</h2>
     <?php }else{ ?>
-        <h2>All Bosses</h2>
+        <h2>All Sorceries</h2>
     <?php } ?>  
 
     <div class="bosses-container">
-        <?php if (count($this->view->bosses) > 0): ?>
-            <?php foreach ($this->view->bosses as $boss): ?>
-                <form method="POST" action="/bosses" class="boss-card">
-                    <input type="hidden" name="id" value="<?= $boss['id'] ?>">
+        <?php if (count($this->view->sorceries) > 0): ?>
+            <?php foreach ($this->view->sorceries as $sorceries): ?>
+                <form method="POST" action="/sorceries" class="boss-card">
+                    <input type="hidden" name="id" value="<?= $sorceries['id'] ?>">
                     <div class="card">
-                        <img src="<?= $boss['image_path'] ?>" 
+                        <img src="<?= $sorceries['image_path'] ?>" 
                              class="card-img-top" 
-                             alt="<?= $boss['name'] ?>">
+                             alt="<?= $sorceries['name'] ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $boss['name'] ?></h5>
-                            <p class="card-text">Game: <?= $boss['game'] ?></p>
+                            <h5 class="card-title"><?= $sorceries['name'] ?></h5>
+                            <p class="card-text">Game: <?= $sorceries['game'] ?></p>
                             <p class="card-text">Trophy: 
-                        <?php if ($boss['trophy']): ?>
+                        <?php if ($sorceries['trophy']): ?>
                             <span class="material-symbols-outlined">emoji_events</span>
                         <?php endif ?>
                         </p>
                             <div class="status-checkbox">
                                 <label>
-                                    <input type="checkbox" name="checkBox" value="1" onchange="this.form.submit()"> Defeated
+                                    <input type="checkbox" name="checkBox" value="1" onchange="this.form.submit()"> collected
                                 </label>
                                 <button type="submit" class="btn-submit" style="display:none;">Submit</button>
                             </div>
@@ -37,4 +37,4 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-</div> 
+</div>

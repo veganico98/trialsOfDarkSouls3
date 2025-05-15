@@ -20,6 +20,18 @@ class Route extends Bootstrap {
 			'action' => 'bosses'
 		);
 
+		$routes['infusions'] = array(
+			'route' => '/infusions',
+			'controller' => 'appController',
+			'action' => 'infusions'
+		);
+
+		$routes['sorceries'] = array(
+			'route' => '/sorceries',
+			'controller' => 'appController',
+			'action' => 'sorceries'
+		);
+
 		$this->setRoutes($routes);
 	}
 
