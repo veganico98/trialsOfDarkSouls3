@@ -61,9 +61,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All pyromancies</a></li>
-                    <li><a href="/">Pyromancies not collected</a></li>
-                    <li><a href="/">Pyromancies collected</a></li>
+                    <li><a href="/pyromancies">All pyromancies</a></li>
+                    <li><a href="/pyromancies?status=0">Pyromancies not collected</a></li>
+                    <li><a href="/pyromancies?status=1">Pyromancies collected</a></li>
                 </ul>
             </li>
 

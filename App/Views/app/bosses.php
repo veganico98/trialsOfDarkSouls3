@@ -1,3 +1,5 @@
+<?php $status = isset($_GET['status']) ? $_GET['status'] : null; ?>
+
 <div class="content">
 
     <?php if(isset($_GET['status']) && $_GET['status'] == 1){ ?>
@@ -25,12 +27,7 @@
                             <span class="material-symbols-outlined">emoji_events</span>
                         <?php endif ?>
                         </p>
-                            <div class="status-checkbox">
-                                <label>
-                                    <input type="checkbox" name="checkBox" value="1" onchange="this.form.submit()"> Defeated
-                                </label>
-                                <button type="submit" class="btn-submit" style="display:none;">Submit</button>
-                            </div>
+                            <?php include __DIR__ . '/../layouts/checkbox.php'; ?>
                         </div>
                     </div>
                 </form>

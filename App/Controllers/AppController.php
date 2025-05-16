@@ -31,11 +31,8 @@ class AppController extends Action{
             $bosses->__set('status', $newStatus);
             $bosses->updateStatusBoss();
             
-            if ($_GET['status'] == 1) {
-                header('Location: /bosses?status=1');
-            } else if ($_GET['status'] == 0) {
-                header('Location: /bosses?status=0');
-            }
+            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            header("Location: /bosses$redirectStatus");
             exit;
         }
 
@@ -43,35 +40,24 @@ class AppController extends Action{
     }
 
     public function infusions() {
-        $infusions = Container::getModel('Items');
+        $items = Container::getModel('Items');
 
         $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
 
         if ($status !== null) {
-            $infusions->__set('status', $status);
-            $this->view->infusions = $infusions->getStatusItemsInfusions();
+            $items->__set('status', $status);
+            $this->view->infusions = $items->getStatusItemsInfusions();
         } else {
-            $this->view->infusions = $infusions->getAllInfusions();
+            $this->view->infusions = $items->getAllInfusions();
         }
 
         if (isset($_POST['checkBox'])) {
-            $infusions->__set('id', $_POST['id']);
-
-            $currentInfusion = $infusions->getItemsById();
-            $currentStatus = $currentInfusion['status'];
-
-            $newStatus = $currentStatus == 1 ? 0 : 1;
-
-            $infusions->__set('status', $newStatus);
-            $infusions->updateStatusItems();
+            $newStatus = $this->currentItemStats();
 
             $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
 
-            if ($redirectStatus === 0 || $redirectStatus === 1) {
-                header('Location: /infusions?status=' . $redirectStatus);
-            } else {
-                header('Location: /infusions');
-            }
+            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            header("Location: /infusions$redirectStatus");
 
             exit;
         }
@@ -80,39 +66,71 @@ class AppController extends Action{
     }
 
     public function sorceries(){
-        $sorceries = Container::getModel('Items');
+        $item = Container::getModel('Items');
 
         $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
 
         if($status !== null){
-            $sorceries->__set('status', $status);
-            $this->view->sorceries = $sorceries->getStatusItemsSorceries();
+            $item->__set('status', $status);
+            $this->view->sorceries = $item->getStatusItemsSorceries();
         }else{
-            $this->view->sorceries = $sorceries->getAllSorceries();
+            $this->view->sorceries = $item->getAllSorceries();
         }
 
         if(isset($_POST['checkBox'])){
-            $sorceries->__set('id', $_POST['id']);
-
-            $currentSorcery = $sorceries->getItemById();
-            $currentStatus = $currentSorcery['status'];
-
-            $newStatus = $currentStatus == 1 ? 0 : 1;
-
-            $sorceries->__set('status', $newStatus);
-            $sorceries->updateStatusItems();
+            $newStatus = $this->currentItemStats();
 
             $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
 
-            if ($redirectStatus === 0 || $redirectStatus === 1) {
-                header('Location: /sorceries?status=' . $redirectStatus);
-            } else {
-                header('Location: /sorceries');
-            }
+            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            header("Location: /sorceries$redirectStatus");
 
             exit;
         }
 
         $this->render('sorceries');
     }
+
+    public function pyromancies(){
+        $item = Container::getModel('Items');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if($status !== null){
+            $item->__set('status', $status);
+            $this->view->pyromancies = $item->getStatusItemsPyromancies();
+        }else{
+            $this->view->pyromancies = $item->getAllPyromancies();
+        }
+
+        if(isset($_POST['checkBox'])){
+            $newStatus = $this->currentItemStats();
+
+            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            header("Location: /pyromancies$redirectStatus");
+
+            exit;
+        }
+
+        $this->render('/pyromancies');
+    }
+
+    public function currentItemStats(){
+        $item = Container::getModel('Items');
+
+        $item->__set('id', $_POST['id']);
+        
+        $currentItem = $item->getItemsById();
+        $currentStatus = $currentItem['status'];
+        
+        $newStatus = $currentStatus == 1 ? 0 : 1;
+        
+        $item->__set('status', $newStatus);
+        $item->updateStatusItems();
+        
+        return $newStatus;
+    }
+
 }

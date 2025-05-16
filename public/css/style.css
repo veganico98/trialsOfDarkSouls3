@@ -36,8 +36,6 @@ header img.logo:hover {
     transform: translateX(-50%) scale(1.05);
 }
 
-/* Sidebar Estilo Dark Souls */
-
 .arrow {
     float: right;
     margin-right: 15px;
@@ -47,14 +45,6 @@ header img.logo:hover {
 .nav-side-menu li.active > a > .arrow {
     transform: rotate(90deg);
 }
-
-/* .content {
-    padding: 20px;
-}
-
-.content.shift {
-    margin-left: 220px;
-} */
 
 .container {
     display: flex;
@@ -119,6 +109,7 @@ header img.logo:hover {
 }
 
 .card:hover {
+    color: white;
     transform: scale(1.02);
     box-shadow: 0 0 15px #B88A3B88;
 }
@@ -188,14 +179,31 @@ button {
     background-color: #3e3e3e;
 }
 
-/* Ícones */
-.material-symbols-trophy {
+.trophy {
     font-family: 'Material Symbols Outlined';
     font-size: 18px;
     vertical-align: text-bottom;
     margin-right: 5px;
     transform: translateY(2px);
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #745b32;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8d6a2d;
+}
+
 
 footer {
     height: 3em;

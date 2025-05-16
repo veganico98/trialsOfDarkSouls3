@@ -1,12 +1,14 @@
+<?php $status = isset($_GET['status']) ? $_GET['status'] : null; ?>
+
 <div class="content">
 
-    <?php if(isset($_GET['status']) && $_GET['status'] == 1){ ?>
+    <?php if(isset($_GET['status']) && $_GET['status'] == 0){ ?>
         <h2>Infusions not collected</h2>      
-    <?php }else if(isset($_GET['status']) && $_GET['status'] == 0) { ?>
+    <?php }else if(isset($_GET['status']) && $_GET['status'] == 1) { ?>
         <h2>Infusions collected</h2>
     <?php }else{ ?>
         <h2>All Infusions</h2>
-    <?php } ?>  
+    <?php } ?>
 
     <div class="bosses-container">
         <?php if (count($this->view->infusions) > 0): ?>
@@ -25,12 +27,7 @@
                             <span class="material-symbols-outlined">emoji_events</span>
                         <?php endif ?>
                         </p>
-                            <div class="status-checkbox">
-                                <label>
-                                    <input type="checkbox" name="checkBox" value="1" onchange="this.form.submit()"> collected
-                                </label>
-                                <button type="submit" class="btn-submit" style="display:none;">Submit</button>
-                            </div>
+                            <?php include __DIR__ . '/../layouts/checkbox.php'; ?>
                         </div>
                     </div>
                 </form>
