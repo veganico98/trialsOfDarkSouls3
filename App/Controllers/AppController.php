@@ -39,6 +39,7 @@ class AppController extends Action{
         $this->render('bosses');
     }
 
+    //Infuisions
     public function infusions() {
         $items = Container::getModel('Items');
 
@@ -65,6 +66,7 @@ class AppController extends Action{
         $this->render('infusions');
     }
 
+    //Sorceries
     public function sorceries(){
         $item = Container::getModel('Items');
 
@@ -91,6 +93,7 @@ class AppController extends Action{
         $this->render('sorceries');
     }
 
+    // Pyromancies
     public function pyromancies(){
         $item = Container::getModel('Items');
 
@@ -115,6 +118,33 @@ class AppController extends Action{
         }
 
         $this->render('/pyromancies');
+    }
+
+    // Miracles
+    public function miracles(){
+        $item = Container::getModel('Items');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if($status !== null){
+            $item->__set('status', $status);
+            $this->view->miracles = $item->getStatusItemsMiracles();
+        }else{
+            $this->view->miracles = $item->getAllMiracles();
+        }
+
+        if(isset($_POST['checkBox'])){
+            $newStatus = $this->currentItemStats();
+
+            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            header("Location: /miracles$redirectStatus");
+
+            exit;
+        }
+
+        $this->render('/miracles');
     }
 
     public function currentItemStats(){

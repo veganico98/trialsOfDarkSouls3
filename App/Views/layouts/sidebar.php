@@ -74,9 +74,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All Miracles</a></li>
-                    <li><a href="/">Miracles not collected</a></li>
-                    <li><a href="/">Miracles collected</a></li>
+                    <li><a href="/miracles">All Miracles</a></li>
+                    <li><a href="/miracles?status=0">Miracles not collected</a></li>
+                    <li><a href="/miracles?status=1">Miracles collected</a></li>
                 </ul>
             </li>
 
@@ -103,6 +103,32 @@
                     <li><a href="/">All Rings</a></li>
                     <li><a href="/">Rings not collected</a></li>
                     <li><a href="/">Rings collected</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="#">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    <span class="menu-text">Quests</span>
+                    <span class="arrow material-symbols-outlined">chevron_right</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="/">All Quest</a></li>
+                    <li><a href="/">Quest not completed</a></li>
+                    <li><a href="/">Quest completed</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="#">
+                    <span class="material-symbols-outlined">handshake</span>
+                    <span class="menu-text">Covenants</span>
+                    <span class="arrow material-symbols-outlined">chevron_right</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="/">All Covenants</a></li>
+                    <li><a href="/">Covenant not completed</a></li>
+                    <li><a href="/">Covenant completed</a></li>
                 </ul>
             </li>
         </ul>

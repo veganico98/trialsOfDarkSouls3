@@ -111,6 +111,31 @@ class Items extends Model{
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    //Miracles
+    public function getStatusItemsMiracles(){
+        $query = "
+            SELECT 
+                * 
+            FROM 
+                items 
+            WHERE 
+                type = 'miracles' 
+            AND 
+                status = :status";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':status', $this->__get('status'), \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAllMiracles(){
+        $query = "SELECT * FROM items WHERE type = 'miracles'";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 
     //All items
     public function updateStatusItems(){
