@@ -31,7 +31,7 @@ class AppController extends Action{
             $bosses->__set('status', $newStatus);
             $bosses->updateStatusBoss();
             
-            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            $redirectStatus = $this->redirectStatus();
             header("Location: /bosses$redirectStatus");
             exit;
         }
@@ -54,15 +54,10 @@ class AppController extends Action{
 
         if (isset($_POST['checkBox'])) {
             $newStatus = $this->currentItemStats();
-
-            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
-
-            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            $redirectStatus = $this->redirectStatus();
             header("Location: /infusions$redirectStatus");
-
             exit;
         }
-
         $this->render('infusions');
     }
 
@@ -81,15 +76,10 @@ class AppController extends Action{
 
         if(isset($_POST['checkBox'])){
             $newStatus = $this->currentItemStats();
-
-            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
-
-            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            $redirectStatus = $this->redirectStatus();
             header("Location: /sorceries$redirectStatus");
-
             exit;
         }
-
         $this->render('sorceries');
     }
 
@@ -108,15 +98,10 @@ class AppController extends Action{
 
         if(isset($_POST['checkBox'])){
             $newStatus = $this->currentItemStats();
-
-            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
-
-            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            $redirectStatus = $this->redirectStatus();
             header("Location: /pyromancies$redirectStatus");
-
             exit;
         }
-
         $this->render('/pyromancies');
     }
 
@@ -135,16 +120,56 @@ class AppController extends Action{
 
         if(isset($_POST['checkBox'])){
             $newStatus = $this->currentItemStats();
-
-            $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
-
-            $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+            $redirectStatus = $this->redirectStatus();
             header("Location: /miracles$redirectStatus");
+            exit;
+        }
+        $this->render('/miracles');
+    }
 
+    // Gestures
+    public function gestures(){
+        $item = Container::getModel('Items');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if ($status !== null){
+            $item->__set('status', $status);
+            $this->view->gestures = $item->getStatusGestures();
+        }else{
+            $this->view->gestures = $item->getAllGestures();
+        }
+
+        if (isset($_POST['checkBox'])) {
+            $newStatus = $this->currentItemStats();
+            $redirectStatus = $this->redirectStatus();
+            header("Location: /gestures$redirectStatus");
+            exit;
+        }
+        $this->render('/gestures');
+    }
+
+    // Rings
+    public function rings(){
+        $item = Container::getModel('Items');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if($status !== null){
+            $item->__set('status', $status);
+            $this->view->rings = $item->getStatusItemsRings();
+        }else{
+            $this->view->rings = $item->getAllRings();
+        }
+
+        if(isset($_POST['checkBox'])){
+            $newStatus = $this->currentItemStats();
+            $redirectStatus = $this->redirectStatus();
+            header("Location: /rings$redirectStatus");
             exit;
         }
 
-        $this->render('/miracles');
+        $this->render('/rings');
     }
 
     public function currentItemStats(){
@@ -162,5 +187,14 @@ class AppController extends Action{
         
         return $newStatus;
     }
+
+    public function redirectStatus(){
+        $redirectStatus = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        $redirectStatus = isset($_POST['status']) && $_POST['status'] !== '' ? '?status=' . (int) $_POST['status'] : '';
+
+        return $redirectStatus;
+    }
+            
 
 }

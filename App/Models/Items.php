@@ -136,6 +136,69 @@ class Items extends Model{
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    //Gestures
+    public function getStatusGestures(){
+        $query = "
+            SELECT 
+                * 
+            FROM 
+                items 
+            WHERE 
+                type = 'gestures' 
+            AND 
+                status = :status";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':status', $this->__get('status'), \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAllGestures(){
+        $query = "
+            SELECT 
+                * 
+            FROM 
+                items 
+            WHERE 
+                type = 'gestures'";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    //Rings
+    public function getStatusItemsRings(){
+        $query = "
+            SELECT 
+                * 
+            FROM 
+                items 
+            WHERE 
+                type = 'rings' 
+            AND 
+                status = :status";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':status', $this->__get('status'), \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAllRings(){
+        $query = "
+            SELECT 
+                * 
+            FROM 
+                items 
+            WHERE 
+                type = 'rings'";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
     //All items
     public function updateStatusItems(){

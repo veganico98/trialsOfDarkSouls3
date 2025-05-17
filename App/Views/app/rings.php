@@ -5,19 +5,19 @@
     <?php include __DIR__ . '/../layouts/title.php'; ?>
 
     <div class="bosses-container">
-        <?php if (count($this->view->pyromancies) > 0): ?>
-            <?php foreach ($this->view->pyromancies as $pyromancies): ?>
-                <form method="POST" action="/pyromancies" class="boss-card">
-                    <input type="hidden" name="id" value="<?= $pyromancies['id'] ?>">
+        <?php if (count($this->view->rings) > 0): ?>
+            <?php foreach ($this->view->rings as $rings): ?>
+                <form method="POST" action="/rings" class="boss-card">
+                    <input type="hidden" name="id" value="<?= $rings['id'] ?>">
                     <div class="card">
-                        <img src="<?= $pyromancies['image_path'] ?>" 
+                        <img src="<?= $rings['image_path'] ?>" 
                              class="card-img-top" 
-                             alt="<?= $pyromancies['name'] ?>">
+                             alt="<?= $rings['name'] ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $pyromancies['name'] ?></h5>
-                            <p class="card-text">Game: <?= $pyromancies['game'] ?></p>
+                            <h5 class="card-title"><?= $rings['name'] ?></h5>
+                            <p class="card-text">Game: <?= $rings['game'] ?></p>
                             <p class="card-text">Trophy: 
-                        <?php if ($pyromancies['trophy']): ?>
+                        <?php if ($rings['trophy']): ?>
                             <span class="material-symbols-outlined trophy">emoji_events</span>
                         <?php endif ?>
                         </p>

@@ -42,7 +42,31 @@ class Route extends Bootstrap {
 			'route' => '/miracles',
 			'controller' => 'appController',
 			'action' => 'miracles'
+		); 
+
+		$routes['gestures'] = array(
+			'route' => '/gestures',
+			'controller' => 'appController',
+			'action' => 'gestures'
 		);
+
+		$routes['rings'] = array(
+			'route' => '/rings',
+			'controller' => 'appController',
+			'action' => 'rings'
+		);
+
+		$routes['quests'] = array(
+			'route' => '/quests',
+			'controller' => 'appController',
+			'action' => 'quests'
+		);
+
+		$routes['covenants'] = array(
+			'route' => '/covenants',
+			'controller' => 'appController',
+			'action' => 'covenants'
+		);	
 
 		$this->setRoutes($routes);
 	}

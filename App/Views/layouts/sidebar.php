@@ -87,9 +87,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All Gestures</a></li>
-                    <li><a href="/">Gestures not collected</a></li>
-                    <li><a href="/">Gestures collected</a></li>
+                    <li><a href="/gestures">All Gestures</a></li>
+                    <li><a href="/gestures?status=0">Gestures not collected</a></li>
+                    <li><a href="/gestures?status=1">Gestures collected</a></li>
                 </ul>
             </li>
 
@@ -100,9 +100,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All Rings</a></li>
-                    <li><a href="/">Rings not collected</a></li>
-                    <li><a href="/">Rings collected</a></li>
+                    <li><a href="/rings">All Rings</a></li>
+                    <li><a href="/rings?status=0">Rings not collected</a></li>
+                    <li><a href="/rings?status=1">Rings collected</a></li>
                 </ul>
             </li>
 

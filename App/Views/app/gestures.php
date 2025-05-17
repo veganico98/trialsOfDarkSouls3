@@ -2,22 +2,22 @@
 
 <div class="content">
 
-    <?php include __DIR__ . '/../layouts/title.php'; ?>
+    <?php include __DIR__ . '/../layouts/title.php'; ?>   
 
     <div class="bosses-container">
-        <?php if (count($this->view->pyromancies) > 0): ?>
-            <?php foreach ($this->view->pyromancies as $pyromancies): ?>
-                <form method="POST" action="/pyromancies" class="boss-card">
-                    <input type="hidden" name="id" value="<?= $pyromancies['id'] ?>">
+        <?php if (count($this->view->gestures) > 0): ?>
+            <?php foreach ($this->view->gestures as $gestures): ?>
+                <form method="POST" action="/gestures" class="boss-card">
+                    <input type="hidden" name="id" value="<?= $gestures['id'] ?>">
                     <div class="card">
-                        <img src="<?= $pyromancies['image_path'] ?>" 
+                        <img src="<?= $gestures['image_path'] ?>" 
                              class="card-img-top" 
-                             alt="<?= $pyromancies['name'] ?>">
+                             alt="<?= $gestures['name'] ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $pyromancies['name'] ?></h5>
-                            <p class="card-text">Game: <?= $pyromancies['game'] ?></p>
+                            <h5 class="card-title"><?= $gestures['name'] ?></h5>
+                            <p class="card-text">Game: <?= $gestures['game'] ?></p>
                             <p class="card-text">Trophy: 
-                        <?php if ($pyromancies['trophy']): ?>
+                        <?php if ($gestures['trophy']): ?>
                             <span class="material-symbols-outlined trophy">emoji_events</span>
                         <?php endif ?>
                         </p>

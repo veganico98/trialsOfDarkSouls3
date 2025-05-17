@@ -1,14 +1,8 @@
 <?php $status = isset($_GET['status']) ? $_GET['status'] : null; ?>
 
 <div class="content">
-
-    <?php if(isset($_GET['status']) && $_GET['status'] == 0){ ?>
-        <h2>Sorceries not collected</h2>      
-    <?php }else if(isset($_GET['status']) && $_GET['status'] == 1) { ?>
-        <h2>Sorceries collected</h2>
-    <?php }else{ ?>
-        <h2>All Sorceries</h2>
-    <?php } ?>  
+    
+    <?php include __DIR__ . '/../layouts/title.php'; ?>
 
     <div class="bosses-container">
         <?php if (count($this->view->sorceries) > 0): ?>
@@ -24,7 +18,7 @@
                             <p class="card-text">Game: <?= $sorceries['game'] ?></p>
                             <p class="card-text">Trophy: 
                         <?php if ($sorceries['trophy']): ?>
-                            <span class="material-symbols-outlined">emoji_events</span>
+                            <span class="material-symbols-outlined trophy">emoji_events</span>
                         <?php endif ?>
                         </p>
                             <?php include __DIR__ . '/../layouts/checkbox.php'; ?>
