@@ -16,11 +16,15 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= $covenants['name'] ?></h5>
                             <p class="card-text">
-                                <img src="/img/number_icon.png" alt="Number Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                                <?php if($covenants['item_type_path'] !== '.') { ?>
+                                    <img src="<?=$covenants['item_type_path']?>" alt="Number Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                                <?php } ?>
                                 <?= $covenants['item_type'] ?> - <?= $covenants['number'] ?>
                             </p>
                             <p class="card-text">
-                                <img src="/img/loot_icon.png" alt="Loot Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                                <?php if($covenants['loot_image'] !== '.') { ?>
+                                    <img src="<?=$covenants['loot_image']?>" alt="Loot Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                                <?php } ?>
                                 <?= $covenants['loot'] ?>
                             </p>
                             <p class="card-text">Trophy: 
