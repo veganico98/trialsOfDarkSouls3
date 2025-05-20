@@ -126,9 +126,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All Covenants</a></li>
-                    <li><a href="/">Covenant not completed</a></li>
-                    <li><a href="/">Covenant completed</a></li>
+                    <li><a href="/covenants">All Covenants</a></li>
+                    <li><a href="/covenants?status=0">Covenant not completed</a></li>
+                    <li><a href="/covenants?status=1">Covenant completed</a></li>
                 </ul>
             </li>
         </ul>

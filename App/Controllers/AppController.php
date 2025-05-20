@@ -172,6 +172,27 @@ class AppController extends Action{
         $this->render('/rings');
     }
 
+    // Covenants
+    public function covenants(){
+        $item = Container::getModel('Covenants');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if($status !== null){
+            $item->__set('status', $status);
+            $this->view->covenants = $item->getStatusCovenant();
+        }else{
+            $this->view->covenants = $item->getAllCovenants();
+        }
+
+        if(isset($_POST['checkBox'])){
+            $newStatus = $this->currentCovStats();
+            $redirectStatus = $this->redirectStatus();
+            header("Location: /covenants$redirectStatus");
+        }
+        $this->render('/covenants');
+    }
+
     public function currentItemStats(){
         $item = Container::getModel('Items');
 
@@ -184,6 +205,22 @@ class AppController extends Action{
         
         $item->__set('status', $newStatus);
         $item->updateStatusItems();
+        
+        return $newStatus;
+    }
+
+    public function currentCovStats(){
+        $item = Container::getModel('Covenants');
+
+        $item->__set('id', $_POST['id']);
+        
+        $currentItem = $item->getItemsById();
+        $currentStatus = $currentItem['status'];
+        
+        $newStatus = $currentStatus == 1 ? 0 : 1;
+        
+        $item->__set('status', $newStatus);
+        $item->updateStatusCovenant();
         
         return $newStatus;
     }
