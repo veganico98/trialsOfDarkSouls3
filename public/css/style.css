@@ -204,6 +204,28 @@ button {
   background: #8d6a2d;
 }
 
+.home-container {
+    padding: 2rem;
+    color: #ddd;
+    font-family: 'Garamond', serif;
+}
+
+.intro-card {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-left: 5px solid #d4af37;
+    border-radius: 8px;
+    max-width: 750px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    line-height: 1.6;
+}
+
+.bonfire-icon {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
 
 footer {
     height: 3em;
