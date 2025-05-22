@@ -186,11 +186,32 @@ class AppController extends Action{
         }
 
         if(isset($_POST['checkBox'])){
-            $newStatus = $this->currentCovStats();
+            $newStatus = $this->currentCovStatus();
             $redirectStatus = $this->redirectStatus();
             header("Location: /covenants$redirectStatus");
         }
         $this->render('/covenants');
+    }
+
+    //Quests
+    public function quests(){
+        $item = Container::getModel('Quests');
+
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : null;
+
+        if($status !== null){
+            $item->__set('status', $status);
+            $this->view->quests = $item->getStatusQuests();
+        }else{
+            $this->view->quests = $item->getAllQuests();
+        }
+
+        if(isset($_POST['checkBox'])){
+            $newStatus = $this->currentQuestStatus();
+            $redirectStatus = $this->redirectStatus();
+            header("Location: /quests$redirectStatus");
+        }
+        $this->render('/quests');
     }
 
     public function currentItemStats(){
@@ -209,7 +230,7 @@ class AppController extends Action{
         return $newStatus;
     }
 
-    public function currentCovStats(){
+    public function currentCovStatus(){
         $item = Container::getModel('Covenants');
 
         $item->__set('id', $_POST['id']);
@@ -223,6 +244,23 @@ class AppController extends Action{
         $item->updateStatusCovenant();
         
         return $newStatus;
+    }
+
+    public function currentQuestStatus(){
+        $item = Container::getModel('Quests');
+
+        $item->__set('id', $_POST['id']);
+
+        $currentItem = $item->getItemsById();
+        $currentStatus = $currentItem['status'];
+        
+        $newStatus = $currentStatus == 1 ? 0 : 1;
+        
+        $item->__set('status', $newStatus);
+        $item->updateStatusQuests();
+        
+        return $newStatus;
+
     }
 
     public function redirectStatus(){

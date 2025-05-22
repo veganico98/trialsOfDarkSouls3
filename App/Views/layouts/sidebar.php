@@ -113,9 +113,9 @@
                     <span class="arrow material-symbols-outlined">chevron_right</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/">All Quest</a></li>
-                    <li><a href="/">Quest not completed</a></li>
-                    <li><a href="/">Quest completed</a></li>
+                    <li><a href="/quests">All Quest</a></li>
+                    <li><a href="/quests?status=0">Quest not completed</a></li>
+                    <li><a href="/quests?status=1">Quest completed</a></li>
                 </ul>
             </li>
 

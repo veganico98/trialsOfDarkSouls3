@@ -1,6 +1,5 @@
-<div class="home-container">
+<div class="home-intro-container">
     <div class="intro-card">
-        <img src="/img/bonfire.gif" alt="Bonfire Icon" class="bonfire-icon">
         <h1>Welcome, Ashen One.</h1>
         <p>
             This is <strong>Trials of Dark Souls 3</strong>, a digital sanctuary forged by a fan for those brave enough to walk the path toward the flame — and the platinum.
@@ -24,5 +23,6 @@
             <em>“The flame fades... but you, Ashen one, do not.”</em><br>
             <strong>Claim your destiny.</strong>
         </p>
+        <img src="/img/bonfire.gif" alt="Bonfire Icon" class="bonfire-icon">
     </div>
 </div>

@@ -98,6 +98,11 @@ header img.logo:hover {
     padding: 0;
 }
 
+.mensage{
+    color: #d6b879;
+    text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
+}
+
 .card {
     width: 100%;
     margin: 0;
@@ -204,26 +209,43 @@ button {
   background: #8d6a2d;
 }
 
-.home-container {
-    padding: 2rem;
-    color: #ddd;
-    font-family: 'Garamond', serif;
+.home-intro-container {
+    max-width: 800px;
+    margin: 80px auto;
+    margin-top: 0px;
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 2px solid #8b6e3f; /* dourado envelhecido */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(139, 110, 63, 0.3);
+    color: #f0e6d2;
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
 }
 
-.intro-card {
-    background-color: #1e1e1e;
-    padding: 2rem;
-    border-left: 5px solid #d4af37;
-    border-radius: 8px;
-    max-width: 750px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-    line-height: 1.6;
+.home-intro-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #d6b879;
+    text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
 }
 
 .bonfire-icon {
-    width: 50px;
+    width: 100px;
     margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
