@@ -8,7 +8,7 @@
         <ul id="menu-content">
 
             <li>
-                <a href="/">
+                <a href="/home">
                     <span class="material-symbols-outlined">home</span>
                     <span class="menu-text">Home</span>
                 </a>

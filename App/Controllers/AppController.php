@@ -7,6 +7,11 @@ use MF\Controller\Action;
 use MF\Model\Container;
 
 class AppController extends Action{
+    public function home() {
+
+		$this->render('home');
+	}
+
     public function bosses(){
 
         $bosses = Container::getModel('Bosses');
