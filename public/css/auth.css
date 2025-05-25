@@ -1,0 +1,133 @@
+:root {
+  --color-primary: #0a0a0a;
+  --color-secondary: #8b6e3f;
+  --color-text-light: #f0e6d2;
+  --card-bg: #1a1a1a;
+  --border: #3a3a3a;
+  --accent: #b88a3b;
+}
+
+body{
+    background-image: url("../img/TOP_img_DS3.jpg");
+}
+
+header {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    background-color: #242328;
+    padding: 0 10px;
+    position: relative;
+    box-shadow: 0 2px 5px #00000080;
+    z-index: 1000;
+}
+
+header img:first-child {
+    height: 3em;
+}
+
+header img.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10em;
+    transition: transform 0.3s ease;
+}
+
+header img.logo:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+#login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 8vh;
+
+}
+
+.login-box {
+    padding: 3em 2em;
+    background-color: var(--card-bg);
+    border: 2px solid var(--color-secondary);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(139, 110, 63, 0.25);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+  color: var(--color-secondary);
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  background: var(--card-bg);
+  padding: 2em;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  color: var(--color-text-light);
+}
+
+form label {
+  margin-bottom: 0.25em;
+}
+
+input {
+  width: 100%;
+  padding: 0.7em;
+  background-color: #121212;
+  color: var(--color-text-light);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 5px var(--color-secondary);
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.8em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #8d6a2d;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #745b32;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8d6a2d;
+}

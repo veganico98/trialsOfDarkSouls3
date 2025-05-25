@@ -1,274 +1,274 @@
 /* Estilos Globais */
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #1A1A1A;
-    color: #A6A6A6;
-    scroll-behavior: smooth;
+height: 100%;
+margin: 0;
+font-family: 'Roboto', sans-serif;
+background-color: #1A1A1A;
+color: #A6A6A6;
+scroll-behavior: smooth;
 }
 
 /* Header */
 header {
-    height: 3em;
-    display: flex;
-    align-items: center;
-    background-color: #242328;
-    padding: 0 10px;
-    position: relative;
-    box-shadow: 0 2px 5px #00000080;
-    z-index: 1000;
+height: 3em;
+display: flex;
+align-items: center;
+background-color: #242328;
+padding: 0 10px;
+position: relative;
+box-shadow: 0 2px 5px #00000080;
+z-index: 1000;
 }
 
 header img:first-child {
-    height: 3em;
+height: 3em;
 }
 
 header img.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 10em;
-    transition: transform 0.3s ease;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+height: 10em;
+transition: transform 0.3s ease;
 }
 
 header img.logo:hover {
-    transform: translateX(-50%) scale(1.05);
+transform: translateX(-50%) scale(1.05);
 }
 
 .arrow {
-    float: right;
-    margin-right: 15px;
-    transition: transform 0.3s;
+float: right;
+margin-right: 15px;
+transition: transform 0.3s;
 }
 
 .nav-side-menu li.active > a > .arrow {
-    transform: rotate(90deg);
+transform: rotate(90deg);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #1A1A1A;
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: top;
-    padding: 2em;
+display: flex;
+flex-direction: column;
+width: 100%;
+min-height: 100vh;
+background-color: #1A1A1A;
+background-repeat: repeat-y;
+background-size: cover;
+background-position: top;
+padding: 2em;
 }
 
 .container.progress {
-    color: #B88A3B;
+color: #B88A3B;
 }
 
 .container.done {
-    background-color: #111111;
-    color: #A6A6A6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    text-align: center;
-    font-style: italic;
+background-color: #111111;
+color: #A6A6A6;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 50vh;
+text-align: center;
+font-style: italic;
 }
 
 .alive-section, .defeated-section, .adquireArea, #bosses-defeated-container, #rings-obtained-container {
-    background-color: #1a1a1acc;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #00000055;
+background-color: #1a1a1acc;
+padding: 20px;
+margin-top: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px #00000055;
 }
 
 .alive-section {
-    color: #B88A3B;
-    border-bottom: 1px solid #2e2e2eb0;
+color: #B88A3B;
+border-bottom: 1px solid #2e2e2eb0;
 }
 
 .defeated-section {
-    color: #A6A6A6;
+color: #A6A6A6;
 }
 
 .bosses-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    width: 100%;
-    padding: 0;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 20px;
+width: 100%;
+padding: 0;
 }
 
 .mensage{
-    color: #d6b879;
-    text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
+color: #d6b879;
+text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
 }
 
 .card {
-    width: 100%;
-    margin: 0;
-    border-radius: 10px;
-    background-color: #2e2e2eb0;
-    box-shadow: 0 0 10px #00000055;
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
+width: 100%;
+margin: 0;
+border-radius: 10px;
+background-color: #2e2e2eb0;
+box-shadow: 0 0 10px #00000055;
+transition: transform 0.3s, box-shadow 0.3s;
+overflow: hidden;
 }
 
 .card:hover {
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 0 15px #B88A3B88;
+color: white;
+transform: scale(1.02);
+box-shadow: 0 0 15px #B88A3B88;
 }
 
 .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+width: 100%;
+height: 200px;
+object-fit: cover;
 }
 
 .card-body {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+padding: 15px;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
 }
 
 .boss-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+height: 100%;
+display: flex;
+flex-direction: column;
 }
 
 .status-checkbox {
-    margin-top: auto;
-    padding: 10px 0;
+margin-top: auto;
+padding: 10px 0;
 }
 
 .status-checkbox label {
-    font-size: 14px;
-    color: white;
+font-size: 14px;
+color: white;
 }
 
 button {
-    background: none;
-    border: none;
-    cursor: pointer;
+background: none;
+border: none;
+cursor: pointer;
 }
 
 .btn-submit {
-    background-color: #B88A3B;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+background-color: #B88A3B;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 10px;
 }
 
 .btn-submit:hover {
-    background-color: #8d6a2d;
+background-color: #8d6a2d;
 }
 
 .status-checkbox input[type="checkbox"] {
-    display: none;
+display: none;
 }
 
 .status-checkbox label {
-    background-color: #2e2e2e;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
+background-color: #2e2e2e;
+padding: 5px 10px;
+border-radius: 4px;
+cursor: pointer;
+display: inline-block;
 }
 
 .status-checkbox label:hover {
-    background-color: #3e3e3e;
+background-color: #3e3e3e;
 }
 
 .trophy {
-    font-family: 'Material Symbols Outlined';
-    font-size: 18px;
-    vertical-align: text-bottom;
-    margin-right: 5px;
-    transform: translateY(2px);
+font-family: 'Material Symbols Outlined';
+font-size: 18px;
+vertical-align: text-bottom;
+margin-right: 5px;
+transform: translateY(2px);
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A1A1A;
+background: #1A1A1A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #745b32;
-  border-radius: 5px;
+background: #745b32;
+border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8d6a2d;
+background: #8d6a2d;
 }
 
 .home-intro-container {
-    max-width: 800px;
-    margin: 80px auto;
-    margin-top: 0px;
-    padding: 40px;
-    background: rgba(20, 20, 20, 0.8);
-    border: 2px solid #8b6e3f; /* dourado envelhecido */
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(139, 110, 63, 0.3);
-    color: #f0e6d2;
-    font-family: 'Georgia', serif;
-    line-height: 1.7;
-    text-align: center;
-    animation: fadeIn 1.5s ease;
+max-width: 800px;
+margin: 80px auto;
+margin-top: 0px;
+padding: 40px;
+background: rgba(20, 20, 20, 0.8);
+border: 2px solid #8b6e3f;
+border-radius: 12px;
+box-shadow: 0 0 20px rgba(139, 110, 63, 0.3);
+color: #f0e6d2;
+font-family: 'Georgia', serif;
+line-height: 1.7;
+text-align: center;
+animation: fadeIn 1.5s ease;
 }
 
 .home-intro-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #d6b879;
-    text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
+font-size: 2.5em;
+margin-bottom: 20px;
+color: #d6b879;
+text-shadow: 0 0 10px rgba(214, 184, 121, 0.5);
 }
 
 .bonfire-icon {
-    width: 100px;
-    margin-bottom: 1rem;
+width: 100px;
+margin-bottom: 1rem;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+from {
+    opacity: 0;
+    transform: translateY(30px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
 
 
 footer {
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2e2e2e;
-    color: #ccc;
-    font-size: 0.9em;
-    box-shadow: 0 -2px 5px #00000080;
-    margin-left: 220px;
-    transition: margin-left 0.3s;
+height: 3em;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #2e2e2e;
+color: #ccc;
+font-size: 0.9em;
+box-shadow: 0 -2px 5px #00000080;
+margin-left: 220px;
+transition: margin-left 0.3s;
 }
 
 
 @media (max-width: 768px) {
-    .content, footer {
-        margin-left: 0 !important;
-    }
-    
-    .content.shift {
-        margin-left: 0 !important;
-    }
+.content, footer {
+    margin-left: 0 !important;
+}
+
+.content.shift {
+    margin-left: 0 !important;
+}
 }

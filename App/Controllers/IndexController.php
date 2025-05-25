@@ -10,7 +10,7 @@ class IndexController extends Action {
 
 	public function index() {
 
-		$this->render('index');
+		$this->render('index', 'authLayout');
 	}
 
 }

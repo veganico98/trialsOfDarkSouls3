@@ -41,7 +41,7 @@ class AppController extends Action{
             exit;
         }
 
-        $this->render('bosses');
+        $this->render('bosses', 'layout');
     }
 
     //Infuisions
@@ -63,7 +63,7 @@ class AppController extends Action{
             header("Location: /infusions$redirectStatus");
             exit;
         }
-        $this->render('infusions');
+        $this->render('infusions', 'layout');
     }
 
     //Sorceries
@@ -85,7 +85,7 @@ class AppController extends Action{
             header("Location: /sorceries$redirectStatus");
             exit;
         }
-        $this->render('sorceries');
+        $this->render('sorceries', 'layout');
     }
 
     // Pyromancies
@@ -107,7 +107,7 @@ class AppController extends Action{
             header("Location: /pyromancies$redirectStatus");
             exit;
         }
-        $this->render('/pyromancies');
+        $this->render('/pyromancies', 'layout');
     }
 
     // Miracles
@@ -129,7 +129,7 @@ class AppController extends Action{
             header("Location: /miracles$redirectStatus");
             exit;
         }
-        $this->render('/miracles');
+        $this->render('/miracles', 'layout');
     }
 
     // Gestures
@@ -151,7 +151,7 @@ class AppController extends Action{
             header("Location: /gestures$redirectStatus");
             exit;
         }
-        $this->render('/gestures');
+        $this->render('/gestures', 'layout');
     }
 
     // Rings
@@ -174,7 +174,7 @@ class AppController extends Action{
             exit;
         }
 
-        $this->render('/rings');
+        $this->render('/rings', 'layout');
     }
 
     // Covenants
@@ -195,7 +195,7 @@ class AppController extends Action{
             $redirectStatus = $this->redirectStatus();
             header("Location: /covenants$redirectStatus");
         }
-        $this->render('/covenants');
+        $this->render('/covenants', 'layout');
     }
 
     //Quests
@@ -216,7 +216,7 @@ class AppController extends Action{
             $redirectStatus = $this->redirectStatus();
             header("Location: /quests$redirectStatus");
         }
-        $this->render('/quests');
+        $this->render('/quests', 'layout');
     }
 
     public function currentItemStats(){
